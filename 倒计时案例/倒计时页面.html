@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #pic {
+    width: 190px;
+    height: 260px;
+    background-image: url("f7.png");
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: "Microsoft YaHei", "Heiti SC", tahoma, arial, "Hiragino Sans GB", 宋体, sans-serif;
+    line-height: 50px;
+  }
+
+  .wrapper {
+    width: 190px;
+    height: 260px;
+    border: 2px solid black;
+  }
+
+  #dian {
+    margin-top: 40px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  span {
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    margin-right: 20px;
+    position: relative;
+  }
+</style>
+
+
+<body>
+  <div class="wrapper">
+    <div id="pic">
+      <div id="ms">京东秒杀</div>
+      <div id="fd">FLASH DEALS</div>
+      <div id="dian"><strong>16:00</strong>点场距结束</div>
+      <span id="h">hou</span><span id="m">min</span><span id="s">sec</span>
+    </div>
+
+
+  </div>
+
+</body>
+
+<script>
+  var time2 = new Date(2022, 7, 1, 22, 00, 00)
+  var time2_sec = time2.getTime();
+  let nIntervId = 0;
+
+  function f1() {
+    var time1 = new Date();
+    var time1_sec = time1.getTime();
+    var time_gap = time2_sec - time1_sec
+    // console.log(time_gap);
+    var hou = (Math.floor(time_gap / 1000 / 3600) < 10) ? "0" + Math.floor(time_gap / 1000 / 3600) + ":" : Math.floor(time_gap / 1000 / 3600) + ":";
+    var min = (Math.floor(time_gap / 1000 / 60) % 60) < 10 ? "0" + (Math.floor(time_gap / 1000 / 60) % 60) + ":" : (Math.floor(time_gap / 1000 / 60) % 60) + ":";
+    var sec = (Math.floor(time_gap / 1000) % 60 % 60) < 10 ? "0" + (Math.floor(time_gap / 1000) % 60 % 60) : (Math.floor(time_gap / 1000) % 60 % 60);
+   
+  
+    
+    document.getElementById("h").innerText = hou;
+    document.getElementById("m").innerText = min;
+    document.getElementById("s").innerText = sec;
+    console.log(hou,min,sec);
+    
+  }
+  f1();
+  setInterval(f1, 1000);
+  
+
+</script>
+
+
+</html>

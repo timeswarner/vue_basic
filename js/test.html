@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <ul>
+        <li>知否知否,应该是等你好久1</li>
+        <li>知否知否,应该是等你好久2</li>
+        <li>知否知否,应该是等你好久3</li>
+        <li>知否知否,应该是等你好久4</li>
+    </ul>
+    <ol id="id2">
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+    </ol>
+    <script>
+        var lis = document.getElementsByTagName("li");
+        console.log(lis);
+        for(var i = 0; i < lis.length; i++){
+            console.log(lis[i]);            
+        }        
+
+        // console.log(document.getElementsByTagName("ol")[0].getElementsByTagName('li'));
+        var ol = document.getElementById("id2");
+        console.log(ol.getElementsByTagName("li"));
+        
+        
+        
+    </script>
+</body>
+</html>

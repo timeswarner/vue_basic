@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue中的数据代理</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!--本节课就是验证这2条线？
+        1、如果读取vm.name -> getter工作 -> getter把data.name给过去。 
+        2、如果通过vm.name去修改name的值 -> setter执行 -> data.name被改掉。
+        由于vm._data属性的存在，等价于判断vm._data 是否和data相同。
+        
+        _data做了数据劫持。
+    -->
+    <!-- 
+        1、通过vm对象来代理data中属性的操作(读、写)
+        2、Vue中数据代理的好处：更加方便操作data中的数据
+        3、基本原理：
+            通过object.defineProperty()把对象中所有的属性添加到vm上，
+            为每一个添加到vm的属性增加getter和setter。在getter和setter上操作data中的属性。
+        4、_data中的数据劫持是怎么回事？
+        -->
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        <h2>学校名字:{{name}}</h2>
+        <h2>学校地址:{{address}}</h2>
+    </div>
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false //阻止vue启动时生成生产提示。
+    let data = {
+        name: '尚硅谷',
+        address: '北京',
+    }
+    const vm = new Vue({
+        el: '#root',
+        data
+    })
+</script>
+
+
+</html>
