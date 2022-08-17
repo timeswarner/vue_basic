@@ -11,7 +11,7 @@
   #pic {
     width: 190px;
     height: 260px;
-    background-image: url("f7.png");
+    background-image: url("../pic/f7.png");
     text-align: center;
     color: white;
     font-size: 25px;
@@ -70,18 +70,18 @@
     var hou = (Math.floor(time_gap / 1000 / 3600) < 10) ? "0" + Math.floor(time_gap / 1000 / 3600) + ":" : Math.floor(time_gap / 1000 / 3600) + ":";
     var min = (Math.floor(time_gap / 1000 / 60) % 60) < 10 ? "0" + (Math.floor(time_gap / 1000 / 60) % 60) + ":" : (Math.floor(time_gap / 1000 / 60) % 60) + ":";
     var sec = (Math.floor(time_gap / 1000) % 60 % 60) < 10 ? "0" + (Math.floor(time_gap / 1000) % 60 % 60) : (Math.floor(time_gap / 1000) % 60 % 60);
-   
-  
-    
+
+
+
     document.getElementById("h").innerText = hou;
     document.getElementById("m").innerText = min;
     document.getElementById("s").innerText = sec;
-    console.log(hou,min,sec);
-    
+    console.log(hou, min, sec);
+
   }
   f1();
   setInterval(f1, 1000);
-  
+
 
 </script>
 
