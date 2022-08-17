@@ -42,26 +42,26 @@
                 }
             }
         },
-        // watch: {
-        //     isHot: {
-        //         immediate: true,
-        //         //handler什么时候调用呢？就是监视的属性ishot值改变的时候。
-        //         handler(newValue, oldValue) {
-        //             console.log('ishot被修改了', newValue, oldValue);
+        watch: {
+            isHot: {
+                immediate: true,
+                //handler什么时候调用呢？就是监视的属性ishot值改变的时候。
+                handler(newValue, oldValue) {
+                    console.log('ishot被修改了', newValue, oldValue);
 
-        //         }
-        //     }
-        // }
+                }
+            }
+        }
         //1、上面是第一种方式、下面是第二种方式。
 
     })
-    vm.$watch('isHot', {
-        immediate: true,
-        //handler什么时候调用呢？就是监视的属性ishot值改变的时候。
-        handler(newValue, oldValue) {
-            console.log('ishot被修改了', newValue, oldValue);
-        }
-    })
+    // vm.$watch('isHot', {
+    //     immediate: true,
+    //     //handler什么时候调用呢？就是监视的属性ishot值改变的时候。
+    //     handler(newValue, oldValue) {
+    //         console.log('ishot被修改了', newValue, oldValue);
+    //     }
+    // })
 
 </script>
 
